@@ -10,7 +10,8 @@
 /*
  * Peripherals required for pinmux configuration. List will
  * grow with support for more devices getting added.
- * Numbering based on interrupt table.
+ * Numbering copied from Exynos for no good reason besides
+ * consistency in numbering
  *
  */
 enum periph_id {
