@@ -1,0 +1,152 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * Samsung's S5PC110 SoC device tree source
+ *
+ * Copyright (c) 2013-2014 Samsung Electronics, Co. Ltd.
+ *
+ * Mateusz Krawczuk <m.krawczuk@partner.samsung.com>
+ * Tomasz Figa <t.figa@samsung.com>
+ *
+ */
+#include "skeleton.dtsi"
+
+/ {
+	aliases {
+		i2c0 = &i2c0;
+		i2c1 = &i2c1;
+		i2c2 = &i2c2;
+	};
+
+	vic0: interrupt-controller@f2000000 {
+		compatible = "arm,pl192-vic";
+		interrupt-controller;
+		reg = <0xf2000000 0x1000>;
+		#interrupt-cells = <1>;
+	};
+
+	vic1: interrupt-controller@f2100000 {
+		compatible = "arm,pl192-vic";
+		interrupt-controller;
+		reg = <0xf2100000 0x1000>;
+		#interrupt-cells = <1>;
+	};
+
+	vic2: interrupt-controller@f2200000 {
+		compatible = "arm,pl192-vic";
+		interrupt-controller;
+		reg = <0xf2200000 0x1000>;
+		#interrupt-cells = <1>;
+	};
+
+	vic3: interrupt-controller@f2300000 {
+		compatible = "arm,pl192-vic";
+		interrupt-controller;
+		reg = <0xf2300000 0x1000>;
+		#interrupt-cells = <1>;
+	};
+
+	i2c0: i2c@e1800000 {
+		compatible = "samsung,s3c2440-i2c";
+		reg = <0xe1800000 0x1000>;
+		interrupt-parent = <&vic1>;
+		interrupts = <14>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		periph-id = <56>;
+		status = "disabled";
+	};
+
+	i2c1: i2c@fab00000 {
+		compatible = "samsung,s3c2440-i2c";
+		reg = <0xfab00000 0x1000>;
+		interrupt-parent = <&vic2>;
+		interrupts = <13>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		periph-id = <57>;
+		status = "disabled";
+	};
+
+	i2c2: i2c@e1a00000 {
+		compatible = "samsung,s3c2440-i2c";
+		reg = <0xe1a00000 0x1000>;
+		interrupt-parent = <&vic1>;
+		interrupts = <19>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+		periph-id = <58>;
+		status = "disabled";
+	};
+
+	uart0: serial@e2900000 {
+		compatible = "samsung,s5pv210-uart";
+		reg = <0xe2900000 0x400>;
+		interrupt-parent = <&vic1>;
+		interrupts = <10>;
+		periph-id = <51>;
+		status = "disabled";
+	};
+
+	uart1: serial@e2900400 {
+		compatible = "samsung,s5pv210-uart";
+		reg = <0xe2900400 0x400>;
+		interrupt-parent = <&vic1>;
+		interrupts = <11>;
+		periph-id = <52>;
+		status = "disabled";
+	};
+
+	uart2: serial@e2900800 {
+		compatible = "samsung,s5pv210-uart";
+		reg = <0xe2900800 0x400>;
+		interrupt-parent = <&vic1>;
+		interrupts = <12>;
+		periph-id = <53>;
+		status = "disabled";
+	};
+
+	uart3: serial@e2900c00 {
+		compatible = "samsung,s5pv210-uart";
+		reg = <0xe2900c00 0x400>;
+		interrupt-parent = <&vic1>;
+		interrupts = <13>;
+		periph-id = <54>;
+		status = "disabled";
+	};
+
+	sdhci0: sdhci@eb000000 {
+		compatible = "samsung,exynos4412-sdhci";
+		reg = <0xeb000000 0x100000>;
+		interrupt-parent = <&vic1>;
+		interrupts = <26>;
+		periph-id = <75>;
+		status = "disabled";
+	};
+
+	sdhci1: sdhci@eb100000 {
+		compatible = "samsung,exynos4412-sdhci";
+		reg = <0xeb100000 0x100000>;
+		interrupt-parent = <&vic1>;
+		interrupts = <27>;
+		periph-id = <76>;
+		status = "disabled";
+	};
+
+	sdhci2: sdhci@eb200000 {
+		compatible = "samsung,exynos4412-sdhci";
+		reg = <0xeb200000 0x100000>;
+		interrupt-parent = <&vic1>;
+		interrupts = <28>;
+		periph-id = <77>;
+		status = "disabled";
+	};
+
+	sdhci3: sdhci@eb300000 {
+		compatible = "samsung,exynos4412-sdhci";
+		reg = <0xeb300000 0x100000>;
+		interrupt-parent = <&vic3>;
+		interrupts = <2>;
+		periph-id = <78>;
+		status = "disabled";
+	};
+};
