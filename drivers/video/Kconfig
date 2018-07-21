@@ -423,6 +423,12 @@ config ATMEL_HLCD
 	help
 	   HLCDC supports video output to an attached LCD panel.
 
+config SAMSUNG_S6E63M0
+	bool "Enable Samsung s6e63mo panel"
+	depends on DM_VIDEO
+	help
+	   SPI controlled Samsung s6e63m0 LCD panel.
+
 config VIDEO_BROADWELL_IGD
 	bool "Enable Intel Broadwell integrated graphics device"
 	depends on X86
