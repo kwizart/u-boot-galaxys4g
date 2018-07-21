@@ -88,7 +88,6 @@
 					regulator-name = "VLCD_1.8V";
 					regulator-min-microvolt = <1800000>;
 					regulator-max-microvolt = <1800000>;
-					regulator-always-on;
 				};
 
 				ldo8_reg: LDO8 {
@@ -160,7 +159,6 @@
 					regulator-name = "CAM_8M_1.8V";
 					regulator-min-microvolt = <1800000>;
 					regulator-max-microvolt = <1800000>;
-					regulator-always-on;
 				};
 
 				buck1_reg: BUCK1 {
@@ -193,6 +191,25 @@
 					regulator-always-on;
 				};
 			};
+		};
+	};
+
+	spi_lcd: spi-soft {
+		compatible = "spi-gpio";
+		cs-gpios = <&gpmp01 1 0>;
+		gpio-sck = <&gpmp04 1 0>;
+		gpio-mosi = <&gpmp04 3 0>;
+		gpio-miso = <&gpmp04 2 0>;
+		spi-delay-us = <1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		s6e63m0: display@0 {
+			compatible = "samsung,s6e63m0";
+			reg = <0>;
+			reset-gpios = <&gpmp05 5 1>;
+			vdd3-supply = <&ldo7_reg>;
+			vci-supply = <&ldo17_reg>;
 		};
 	};
 };
