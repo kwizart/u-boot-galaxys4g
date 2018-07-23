@@ -20,4 +20,10 @@ unsigned long get_pwm_clk(void);
 unsigned long get_uart_clk(int dev_index);
 void set_mmc_clk(int dev_index, unsigned int div);
 
+unsigned long get_lcd_clk(void);
+static inline void set_lcd_clk(void)
+{
+	/* Nothing, clock should be preconfigured by first-stage bootloader */
+}
+
 #endif

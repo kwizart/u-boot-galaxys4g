@@ -648,6 +648,7 @@ static int exynos_fb_probe(struct udevice *dev)
 		return -ENODEV;
 	}
 
+#if 0
 	ret = uclass_first_device(UCLASS_DISPLAY, &dp);
 	if (ret) {
 		debug("%s: Display device error %d\n", __func__, ret);
@@ -662,6 +663,7 @@ static int exynos_fb_probe(struct udevice *dev)
 		debug("%s: Display enable error %d\n", __func__, ret);
 		return ret;
 	}
+#endif
 
 	/* backlight / pwm */
 	ret = panel_enable_backlight(panel);

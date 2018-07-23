@@ -324,3 +324,11 @@ void set_mmc_clk(int dev_index, unsigned int div)
 {
 	/* Do NOTHING */
 }
+
+unsigned long get_lcd_clk(void)
+{
+	if (cpu_is_s5pc110())
+		return s5pc110_get_pclk();
+
+	return 0;
+}
