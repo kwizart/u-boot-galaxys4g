@@ -212,4 +212,21 @@
 			vci-supply = <&ldo17_reg>;
 		};
 	};
+
+	fimd@11c00000 {
+		compatible = "samsung,exynos-fimd";
+		reg = <0xf8000000 0x20000>;
+
+		samsung,vl-col = <480>;
+		samsung,vl-row = <800>;
+		samsung,vl-freq = <60>;
+		samsung,vl-bpix = <4>;
+		samsung,vl-hspw = <2>;
+		samsung,vl-hfpd = <16>;
+		samsung,vl-hbpd = <16>;
+		samsung,vl-vspw = <2>;
+		samsung,vl-vfpd =  <28>;
+		samsung,vl-vbpd = <1>;
+	};
+};
 };
