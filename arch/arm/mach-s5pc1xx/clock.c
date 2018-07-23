@@ -329,6 +329,6 @@ unsigned long get_lcd_clk(void)
 {
 	if (cpu_is_s5pc110())
 		return s5pc110_get_pclk();
-
-	return 0;
+	else
+		return s5pc100_get_pclk();
 }
