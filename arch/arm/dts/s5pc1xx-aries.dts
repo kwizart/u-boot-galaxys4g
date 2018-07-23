@@ -227,5 +227,7 @@
 		samsung,vl-vspw = <2>;
 		samsung,vl-vfpd =  <28>;
 		samsung,vl-vbpd = <1>;
+
+		u-boot,dm-pre-reloc;
 	};
 };
