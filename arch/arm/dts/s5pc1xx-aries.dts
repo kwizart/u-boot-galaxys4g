@@ -213,7 +213,7 @@
 		};
 	};
 
-	fimd@11c00000 {
+	fimd@f8000000 {
 		compatible = "samsung,exynos-fimd";
 		reg = <0xf8000000 0x20000>;
 
@@ -228,5 +228,4 @@
 		samsung,vl-vfpd =  <28>;
 		samsung,vl-vbpd = <1>;
 	};
-};
 };
