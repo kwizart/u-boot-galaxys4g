@@ -491,6 +491,10 @@ static int s6e63m0_panel_ofdata_to_platdata(struct udevice *dev)
 		return ret;
 	}
 
+	pr_err("Got here\n");
+
+	env_set("s6e63m0", "of_pdata_called");
+
 	return 0;
 }
 

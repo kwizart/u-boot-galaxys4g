@@ -215,6 +215,8 @@ static int soft_spi_probe(struct udevice *dev)
 	int cs_flags, clk_flags;
 	int ret;
 
+	pr_err("SPI: probe enter\n");
+
 	cs_flags = (slave->mode & SPI_CS_HIGH) ? 0 : GPIOD_ACTIVE_LOW;
 	clk_flags = (slave->mode & SPI_CPOL) ? GPIOD_ACTIVE_LOW : 0;
 
@@ -237,6 +239,10 @@ static int soft_spi_probe(struct udevice *dev)
 	if ((plat->flags & (SPI_MASTER_NO_RX | SPI_MASTER_NO_TX)) ==
 	    (SPI_MASTER_NO_RX | SPI_MASTER_NO_TX))
 		return -EINVAL;
+
+	pr_err("SPI: probed\n");
+
+	env_set("soft_spi", "of_pdata_called");
 
 	return 0;
 }

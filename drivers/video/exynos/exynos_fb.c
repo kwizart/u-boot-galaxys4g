@@ -690,6 +690,8 @@ static int exynos_fb_probe(struct udevice *dev)
 	/* Enable flushing after LCD writes if requested */
 	video_set_flush_dcache(dev, true);
 
+	env_set("exynos_fimd", "probed");
+
 	return 0;
 }
 
