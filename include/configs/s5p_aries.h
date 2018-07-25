@@ -42,10 +42,11 @@
 #define MACH_TYPE_SAMSUNG_ARIES		9999
 
 /* Atags */
-#define CONFIG_SETUP_MEMORY_TAGS
 #define CONFIG_CMDLINE_TAG
-#define CONFIG_REVISION_TAG
 #define CONFIG_INITRD_TAG
+#define CONFIG_SETUP_MEMORY_TAGS
+#define CONFIG_SERIAL_TAG
+#define CONFIG_REVISION_TAG
 
 /* Size of malloc() pool before and after relocation */
 #define CONFIG_SYS_MALLOC_LEN		(CONFIG_ENV_SIZE + (80 << 20))
